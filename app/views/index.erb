@@ -1,0 +1,12 @@
+<div class="container">
+  <% unless logged_in? %>
+  <%= erb :login %>
+  <% end %>
+
+  <% if logged_in? %>
+  <h3>Logged in as <%= User.find(session[:current_user_id]).username %><br> <a href="/logout">Logout</a></h3>
+  <% end %> 
+  <br>
+  <center><button type="button"><a href="/oauth">Register via Twitter</a></button></center>
+
+</div>
